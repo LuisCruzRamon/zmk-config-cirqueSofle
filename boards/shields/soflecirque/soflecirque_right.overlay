@@ -44,6 +44,12 @@
 &glidepoint_listener {
     status = "okay";
     device = <&glidepoint_right>;
+
+    /* Scroll mode when RAISE layer (2) is active */
+    scroller {
+        layers = <2>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 10>;
+    };
 };
 
 &glidepoint_split_listener {
